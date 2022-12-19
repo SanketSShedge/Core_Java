@@ -1,0 +1,18 @@
+class A 
+{
+	static char c = 'a';
+}
+class B extends A
+{
+}
+class D extends A
+{
+	static int a = 30;
+	public static void main(String[] args) 
+	{
+		System.out.println(a); //Declared
+		System.out.println(c); //Inherited
+	}
+}
+
+

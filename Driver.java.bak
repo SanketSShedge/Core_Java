@@ -1,0 +1,10 @@
+class FruitDriver 
+{
+	public static void main(String[] args) 
+	{
+		Apple a1 = new Apple("RED",50,"PUNE");
+		System.out.println("Colur:"+colour);
+		System.out.println("Price:"+price);
+		System.out.println("Origin:"+origin);
+	}
+}

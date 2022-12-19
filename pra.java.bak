@@ -1,0 +1,17 @@
+class C
+{
+ private int a=10;
+  public int test()
+  {
+    return a;
+  }
+}
+class B
+{
+   public static void main(String[] args)
+   {
+      C c1=new C();
+    //  System.out.println(c1.a);       //CTE(Direct Access is restricted)
+      System.out.println(c1.test());  //10;(Indirect Access)
+   }
+}

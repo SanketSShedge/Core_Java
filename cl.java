@@ -1,0 +1,22 @@
+class cl
+{
+	int a=100;
+	String s="Wakad";
+	public void add()
+	{
+		System.out.println("3");
+	}
+	static
+	{
+		System.out.println("1");
+	}
+	{
+		System.out.println("2");
+	}
+	public static void main(String[] args) 
+	{
+		cl cl1=new cl();
+		System.out.println(cl1.s);
+		cl1.add();
+	}
+}

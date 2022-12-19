@@ -1,0 +1,27 @@
+class Car
+{
+	private String brand;
+	private String model;
+	public String getbrand(){
+		return brand;
+	}
+	public void setbrand(String brand){
+		this.brand=brand;
+	}
+	public String getmodel(){
+		return model;
+	}
+	public void setmodel(String model){
+		this.model=model;
+	}
+	public static void main(String[] args) 
+	{
+		Car c=new Car();
+		System.out.println(c.getbrand());
+		c.setbrand("Tata");
+		System.out.println(c.getbrand());
+		System.out.println(c.getmodel());
+		c.setmodel("Safari");
+		System.out.println(c.getmodel());
+	}
+}

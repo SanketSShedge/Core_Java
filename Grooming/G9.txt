@@ -1,0 +1,317 @@
+Arrays:It is collection of similar type of elements stored under a common name.
+        Arrays are the continues block of memory which is used to store multiple values.
+
+ characteristics:
+  i)The size of an array must be declare at the time of declaration.
+          ex: int a[]=new int[5];
+  ii)once the size is declared,then it cannot be increased or decreased
+  iii)The size of an array is fixed.
+  iv)Arrays follows index values.If we want to access,modify we can make use of
+      index values.(Index values will start from 0(first) to size-1(last))
+
+           int a[]=new int[5];
+    
+      0    1     2     3     4
+      10   20    30    40    50
+
+To modify(or)assign the data using index values.
+  a[0]=10;
+  a[1]=20;
+  a[2]=30;
+  a[3]=40;
+  a[4]=50;
+To access(or) to iterate the elements present in array using index
+   Sopl(a[0]);//10
+   Sopl(a[1]);//20
+   Sopl(a[2]);//30
+   Sopl(a[3]);//40
+   Sopl(a[4]);//50
+   Sopln(a[5]);//ArrayIndexOutOfBoundsException
+
+EX:
+ class Array2 
+{
+	public static void main(String[] args) 
+	{
+		int a[]=new int[5];//Declaration and Instantiation
+		a[0]=10;
+		a[1]=20;//Initialization
+		a[2]=30;
+		a[3]=40;
+		a[4]=50;
+		System.out.println(a[0]);
+		System.out.println(a[1]);
+		System.out.println(a[2]);
+		System.out.println(a[3]);
+		System.out.println(a[4]);
+              //System.out.println(a[5]);//ArrayIndexOutOfBoundsException
+	}
+}
+
+output:
+10
+20
+30
+40
+50
+
+Declaring,instantiating and initializing the array in single  line
+ 
+  ex:    int arr[]={10,20,30,40,50};
+
+ class Array2 
+{
+	public static void main(String[] args) 
+	{
+		int arr[]={1,2,3,4,5,6,7};
+		System.out.println("Using for loop");
+		for(int i=0;i<=arr.length-1;i++)
+		{
+			System.out.println(arr[i]);
+		}
+		System.out.println("Using For-each loop");
+		for(Object o:arr)
+		{
+			System.out.println(o);
+		}
+	}
+}
+output:
+Using for loop
+1
+2
+3
+4
+5
+6
+7
+Using For-each loop
+1
+2
+3
+4
+5
+6
+7
+
+Disadvantages of arrays:
+i)It can store only homogeneous elements(elements of same type);
+ii)Size is fixed(It can neither increased or decreased);
+iii)Removing elements from an arrays needs too much of complex logics.
+
+Note:To over come these disadvantages we are making use of Collecting frameworks.
+
+
+   Exception:It is problem occurs during the execution of a program(Runtime).
+              When the exception occurs the execution of program stops abruptly.
+  
+Note:All the exceptions in java is throwable type.
+
+Exceptions are of 2 types
+1)Checked(Compiler aware)EX:classNotFound,Sql,IO
+2)Unchecked(Compiler unaware exception)
+   EX:All the RunTimeExceptions are unchecked
+
+Note:All the exceptions in java will occur due to the statements.
+
+
+EX:
+class Except2 
+{
+	public static void main(String[] args) 
+	{
+		int a=0;
+		int b=20;
+		int c=b/a;//ArithmeticException: / by zero
+		System.out.println(c);
+	}
+}
+
+To handle the exception we are making use of Exception handling machanism.
+
+2 ways
+i)Using try-catch block.
+ii)using throws keyword.
+
+
+i)Handling the exception using try-catch block.
+
+try block:place the statement which is responsible for occuring exception
+catch block:to catch the throwable type object reference.
+EX:
+case 1:When catch block catches the exception....Normal flow continues
+
+class Except2 
+{
+	public static void main(String[] args) 
+	{
+		int a=0;
+		int b=20;
+		try
+		{
+	     int c=b/a;
+		System.out.println(c);	
+		}
+		catch (ArithmeticException ae)
+		{
+			System.out.println("Exception handled");
+		}
+		System.out.println("Normal Execution continues");
+	}
+}
+output:
+Exception handled
+Normal Execution continues
+
+
+case 2:If catch block fails to catch the Exception raised.....Program stops abruptly
+ Ex:
+class Except2 
+{
+	public static void main(String[] args) 
+	{
+		int a=0;
+		int b=20;
+		try
+		{
+	         int c=b/a;
+		System.out.println(c);	
+		}
+		catch (NullPointerException npe)
+		{
+			System.out.println("Exception handled");
+		}
+		System.out.println("Normal Execution continues");
+	}
+}
+Output:
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+        at Except2.main(Except2.java:9)
+
+
+Try With Multiple Catch blocks
+
+class Except2 
+{
+	public static void main(String[] args) 
+	{
+		int a=0;
+		int b=20;
+		try
+		{
+	     int c=b/a;
+		System.out.println(c);	
+		}
+		catch (NullPointerException npe)
+		{
+			System.out.println("Exception handled");
+		}
+		catch(Exception e)
+		{
+			System.out.println("Exception handled from Exception block");
+		}
+		catch(Throwable e)
+		{
+			System.out.println("Exception handled from Throwable block");
+		}
+		System.out.println("Normal Execution continues");
+	}
+}
+
+output:
+Exception handled from Exception block
+Normal Execution continues
+
+finally block:finally block will get executed even when the exception is occured
+                 or not occured.
+We can use finally block with the combination of try-catch or only with try
+
+
+EX:
+case 1:If exception is not occured.
+
+class Except2 
+{
+	public static void main(String[] args) 
+	{
+		int a=10;
+		int b=20;
+		try
+		{
+	     int c=b/a;
+		System.out.println(c);	
+		}
+		catch (ArithmeticException ae)
+		{
+			System.out.println("Exception handled");
+		}
+		finally
+		{
+			System.out.println("From finally block");
+		}
+		System.out.println("Normal Execution continues");
+	}
+}
+ output:
+2
+From finally block
+Normal Execution continues
+
+
+case 2:Exception is occured and handled
+
+class Except2 
+{
+	public static void main(String[] args) 
+	{
+		int a=0;
+		int b=20;
+		try
+		{
+	     int c=b/a;//Exception will be raised
+		System.out.println(c);	
+		}
+		catch (ArithmeticException ae)
+		{
+			System.out.println("Exception handled");
+		}
+		finally
+		{
+			System.out.println("From finally block");
+		}
+		System.out.println("Normal Execution continues");
+	}
+}
+Output:
+Exception handled
+From finally block
+Normal Execution continues
+
+case 3: exception occured but not handled.
+
+class Except2 
+{
+	public static void main(String[] args) 
+	{
+		int a=0;
+		int b=20;
+		try
+		{
+	     int c=b/a;//Exception will be raised
+		System.out.println(c);	
+		}
+		finally
+		{
+			System.out.println("From finally block");
+		}
+		System.out.println("Normal Execution continues");
+	}
+}
+output:
+From finally block
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+        at Except2.main(Except2.java:9)
+
+
+1)Difference between throw and throws keyword
+2)Difference beteween final,finalize and finally

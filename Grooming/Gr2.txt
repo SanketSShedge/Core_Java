@@ -1,0 +1,189 @@
+  OOPs: 4 pillars
+   i) Encapsulation
+   ii)Inheritance
+   iii)Polymorphism
+   iv)Abstraction
+
+
+1)Encapsulation:Its a process of binding or wrappingup the states and 
+                behaviour of an object.
+       states refers to non static variables.
+       behavious refers to non static methods.
+ 
+   By using class u have declare the states and behavious of an object.
+
+ Advantage of Encapsulation is Data Hiding.
+
+DataHiding:the process of restricting the direct access to the members
+       by providing indirect secured access via methods.
+
+    private: keyword,modifier
+             
+Getter and Setter
+
+     Ex:  class Student
+        {
+          private String name="ram";  //DataHiding
+         public String getName()
+          {
+           return name;
+          }
+         public void setName(String newName)
+         {
+            this.name=newName;
+         }
+        }
+        class StdDriver
+        {
+          public static void main(String[] args)
+          {
+            Student s=new Student();
+            System.out.println(s.name);//CTE
+            System.out.println(s.getName());//Ram
+          }
+         }
+   
+    2)Inheritance: the process acquiring properties from parent class to child class.
+     Except constructor,private members and initializers
+   
+      5 Types:
+       i) single level:
+                          only one level.
+
+       ii)multi level: is more than one level.
+
+       iii)Hierarchical:     parent class has more than one child at same level
+          
+
+                    class ola
+                    {
+                       int a=10;                                Ola o;  (generalized container)
+                    }
+                   class Mini extends ola                     o=new Auto(); //upcasting        
+                    {                                         Sopln(o.a);//10  
+                    }                                         Sopl(o.k);//CTE
+                  class Auto extends ola                     Auto a1=(Auto)o;//Downcasting
+                   {                         
+                       int k=20;                             Sopln(a1.a);//10
+                   }                                         Sopln(a1.k);//20
+
+
+              
+    
+        iv)Multiple  inheritance:
+                              
+                          child class has more than one parent
+
+
+            class B                             class A
+            {                                    {
+               public void m1()                   public void m1()
+               {                                  {
+                }                                  }
+             }                                  }
+
+                 class C extends A,B
+                  {
+                        C()
+                        { 
+                           super();
+                        }
+                     C c1=new C();
+                        c1.m1();
+                   }   
+
+ java does not supports mulitiple inheritance because of Diamond Problem  (Ambiquity problem)
+   for classes.
+
+    5)Hybrid: combination of multiple and hierarchical inheritance.
+            
+
+ 
+       Upcasting: The process of converting child class referance variable to parent class
+              referance variable.
+        
+               Why Should we upcaste?
+                 i)To achieve generilization.
+
+         Disadvantage:Once the ref var is upcasted then we cannot access child class members
+                       using that parent type ref variable.
+
+
+       Downcasting: The process of converting Parent class referance variable to child class
+                      referance variable.
+        
+                Typecaste Operator....
+
+              
+  3)Polymorphism:greek of
+         poly-many
+         morphism-form
+           
+        Object undergoes various behaviour is known as Polymorphism
+                            (or)
+        An object has the ability to change its behavious is known as Polymorphism.
+
+              
+   2types:
+ 1) Compile time polymorphism(binding is acchieved at compile time and same behaviour is executed )
+           Method overloading
+           Method Shawdowing
+           Constructor overloading
+           Variable shadowing
+        
+ 2)Run Time polymorphism:
+           Method Overriding(changing implementation of parent class method in child class)
+
+  class Parent
+{
+   public void test()
+    {
+       Sopln("From parent class test()");
+     } 
+}
+ class Child extends Parent
+{
+     public void test()
+    {
+       Sopln("From child class test()");
+     } 
+}
+   Parent p=new Child();    
+  p.test(); //from child class test()
+
+
+
+                 4)Abstraction:  The process of hiding the implemention by showing the
+                                     necessary features.  
+                                        (or)
+                      Showing  necessary features by hiding the background details.
+
+       abstact keyword: class and method
+                 
+ abstract Method:incomplete method.
+
+ abstract class: class which at least consists of one abstract method.
+
+              abstract class Mobile
+                  {
+                      abstract void camera();
+                   }
+               class Samsung extend Mobile
+                  {
+                      void camera()
+                     {
+                             Sopln("50mpx");
+                      }
+                  }
+
+
+
+
+
+       
+      
+        
+          
+                     
+            
+

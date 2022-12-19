@@ -1,0 +1,13 @@
+class met1
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("xyz");
+		//add();
+		sub();
+	}
+	public static void sub()
+	{
+		System.out.println("demo2");
+	}
+}

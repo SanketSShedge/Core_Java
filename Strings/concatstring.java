@@ -1,0 +1,10 @@
+class concatstring
+{
+	public static void main(String[] args) 
+	{
+		String s="abc";
+		String s1="xyz";
+		String s3="";
+		System.out.println(s3=s+" "+s1);
+	}
+}

@@ -1,0 +1,20 @@
+class school 
+{
+	String schoolname="ABC HSC";
+	{
+		System.out.println("School name is "+schoolname);
+	}
+	public void test(){
+		System.out.println("From test.");
+	}
+	String sname;
+	int sid;
+	public static void main(String[] args) 
+	{
+		School s=new School();
+		s.test();
+	}
+	static{
+		System.out.println("school");
+	}
+}
